@@ -1,4 +1,3 @@
-const { ModuleFilenameHelpers } = require('webpack');
 const models = require('../models');
 const Account = models.Account;
 
@@ -36,7 +35,7 @@ const signup = async (req, res) => {
     const pass = `${req.body.pass}`;
     const pass2 = `${req.body.pass2}`;
 
-    if (!username || !pass | !pass2) {
+    if (!username || !pass || !pass2) {
         return res.status(400).json({ error: 'All fields are required!' });
     }
 
